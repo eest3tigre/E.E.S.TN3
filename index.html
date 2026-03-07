@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuela de Educación Secundaria Tecnica N° 3</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/logo192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="icons/logo512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="icons/logo192.png">
+
+  <style>
+    :root {
+      --primary-bg: #1e1e1e;
+      --sidebar-bg: #2a2a2a;
+      --card-bg: #2a2a2a;
+      --accent: #ffcb2b;
+      --text-color: #fff;
+      --border-color: #444;
+      --glow-stop-1: #ff69b4;
+      --glow-stop-2: #ffa07a;
+      --glow-stop-3: #ffff8c;
+      --glow-stop-4: #8bc34a;
+      --glow-stop-5: #03a9f4;
+    }
+    [data-theme="light"] {
+      --primary-bg: #fff;
+      --sidebar-bg: #f5f5f5;
+      --card-bg: #fff;
+      --accent: #e67e22;
+      --text-color: #000;
+      --border-color: #ccc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--primary-bg);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-y: auto;
+      color: var(--text-color);
+    }
+    .container {
+      background: var(--card-bg);
+      /* Diseño desktop por defecto */
+      width: 60%;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 8px 32px rgba(0,0,0,0.2);
+      animation: glow-colors 8s ease-in-out infinite;
+    }
+    .container h1 {
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 2em;
+    }
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      border-radius: 5px;
+      box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 8px 32px rgba(0,0,0,0.2);
+      animation: glow-colors 8s ease-in-out infinite;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .buttons button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      width: auto;
+      min-width: 200px;
+      max-width: 300px;
+      height: 50px;
+      font-size: 1em;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+    .buttons button:hover {
+      background: rgba(255,255,255,0.4);
+      transform: translateY(-3px);
+      animation: glow-btn 3s ease-in-out infinite;
+    }
+    @keyframes glow-colors {
+      0%, 100% { box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 8px 32px rgba(0,0,0,0.2); }
+      25% { box-shadow: 0 0 20px var(--glow-stop-1), 0 0 40px var(--glow-stop-1), 0 8px 32px rgba(0,0,0,0.2); }
+      50% { box-shadow: 0 0 20px var(--glow-stop-2), 0 0 40px var(--glow-stop-2), 0 8px 32px rgba(0,0,0,0.2); }
+      75% { box-shadow: 0 0 20px var(--glow-stop-3), 0 0 40px var(--glow-stop-3), 0 8px 32px rgba(0,0,0,0.2); }
+    }
+    @keyframes glow-btn {
+      0%, 100% { box-shadow: 0 0 15px var(--accent); }
+      50%       { box-shadow: 0 0 15px var(--glow-stop-1); }
+    }
+    @media (max-width: 768px) {
+      .container { 
+        padding: 20px;
+        width: 90%;
+        max-width: 900px;
+      }
+      .buttons button { 
+        width: 90%;
+        height: 45px; 
+        font-size: 0.9em;
+        max-width: 800px;
+      }
+      h1 { font-size: 1.5em; }
+      h2 { font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Escuela de Educacion Secundaria Tecnica N° 3</h1>
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <div id="main-menu" class="buttons">
+      <button id="btn1">1°</button>
+      <button id="btn2">2°</button>
+      <button id="btn3">3°</button>
+      <button id="btn4">4°</button>
+      <button id="btn5">5°</button>
+      <button id="btn6">6°</button>
+      <button id="btn7">7°</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx2l6dbTBNnuGLTLDa8MPTsRjRyFK9Ddtdy1nVz_-smGosRV2xDNojmXq3u-zUBmwGuiw/exec">INTENSIFICACION</button>
+      <button id="btn-install">INSTALAR APP</button>
+    </div>
+    <div id="submenu-1" class="buttons" style="display:none;">
+      <button id="btn1-1">1°1°</button>
+      <button id="btn1-2">1°2°</button>
+      <button id="btn1-3">1°3°</button>
+      <button id="btn1-4">1°4°</button>
+      <button id="btn1-5">1°5°</button>
+      <button id="btn1-6">1°6°</button>
+      <button id="btn1-7">1°7°</button>
+  
+      <button id="back1">Volver</button>
+    </div>
+    <!-- Submenu para 2° y 3° -->
+    <div id="submenu-2" class="buttons" style="display:none;">
+      <button id="btn2-1">2°1°</button>
+      <button id="btn2-2">2°2°</button>
+      <button id="btn2-3">2°3°</button>
+      <button id="btn2-4">2°4°</button>
+      <button id="btn2-5">2°5°</button>
+      <button id="btn2-6">2°6°</button>
+      
+   
+      <button id="back2">Volver</button>
+    </div>
+    <div id="submenu-3" class="buttons" style="display:none;">
+      <button id="btn3-1">3°1°</button>
+      <button id="btn3-2">3°2°</button>
+      <button id="btn3-3">3°3°</button>
+      <button id="btn3-4">3°4°</button>
+      <button id="btn3-5">3°5°</button>
+      <button id="btn3-6">3°6°</button>
+      
+      
+      <button id="back3">Volver</button>
+    </div>
+    <!-- Submenu para 4° -->
+    <div id="submenu-4" class="buttons" style="display:none;">
+      <button id="btn4-1">4°A°</button>
+      <button id="btn4-2">4°B°</button>
+      
+      <button id="back4">Volver</button>
+    </div>
+    <!-- Submenu para 5° -->
+    <div id="submenu-5" class="buttons" style="display:none;">
+      <button id="btn5-1">5°A°</button>
+      <button id="btn5-2">5°B°</button>
+     
+      <button id="back5">Volver</button>
+    </div>
+    <!-- Submenu para 6° -->
+    <div id="submenu-6" class="buttons" style="display:none;">
+      <button id="btn6-1">6°A°</button>
+      <button id="btn6-2">6°B°</button>
+    
+      <button id="back6">Volver</button>
+    </div>
+    <!-- Subject menus for each 1° item -->
+    <div id="subjects-1-1" class="buttons" style="display:none;">
+      <h2>Curso 1°1°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx8jpIm5FjdLyBVaLOXwbAV2g_OD5ejtBPT5mUCkyD8JM-fxSiVr499Q-yIHUVIP_rFuA/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9ZL8SdXs5BMRnLYU4gqE5KLbZakyUvrBd3UIEfenHUK0Irp2cK61aG_OAYfGBn8uhHg/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzXR9KjpS4Q53f0GHhFGa2703uWJSB6qZp4jH5kxKE7mxR8uI9JMna75yrxviBUqtU7BA/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-1">Volver</button>
+    </div>
+    <div id="subjects-1-2" class="buttons" style="display:none;">
+      <h2>Curso 1°2°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzwSjwDK-O44m0mHferXV89FitUdRLzlPxGoGKx0k9hJa4G-NxagiVBe1kLtGttTFnHmQ/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyStPHi2Xq_u09MP6NcR-Fu15eSayYnEIo_08gocFOuhr-cvn3Mh9jCkoZ9H_37rnrXCA/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbycT6k7TZAJ18TLk2_qHDYcKh_h1NX1Vsb99JMbaHfXNGB_kHxrVA3M4LvX2-k7axwJcg/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-2">Volver</button>
+    </div>
+    <div id="subjects-1-3" class="buttons" style="display:none;">
+      <h2>Curso 1°3°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyrh9HFZlXpy_pT806RpyWI42eOuJLColkTfhw8xQ6szzxU66qzkCNiZeYXS-hQtA3s/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxh2wkYdywluhCYs8fkKJEi5DpRlUldx66L_rO7RWhjn2zZVEIO4DjO2J-FW04g9nd6/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjLGI6vIRfzSe4p-7onEzqkC-L1JMau21Kwye8pTEUMjdIbPbvwYI-zgDhtHlqqaHw/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-3">Volver</button>
+    </div>
+    <div id="subjects-1-4" class="buttons" style="display:none;">
+      <h2>Curso 1°4°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz5a8yPKyyRKyUzooKEMN-Yekft_q9fj1ie-T-hn2ONpSZZ5taW_ySGiYu_f4kMUdrV/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwQT3ZaWXUrN7h3x9hTzx6KZNw2B086kU-7fr14HHu5CpCFVBEPmLE6YYrC8XvYROmR/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyyw1BUfxikboOo4ZKnkWM8j6fk_x7oBV9C-2_FrVqXx-LXmrsmxV1KSnlLmrGlLA/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-4">Volver</button>
+    </div>
+    <div id="subjects-1-5" class="buttons" style="display:none;">
+      <h2>Curso 1°5°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyJLnkQxWShD2vXwh2f7VhBn7VGXzudf20zgNpKAATjyE-7BupsTz8963bJZWPL494D/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwuFLczH6I6WYIIUI5pbm57NPlDnM5uUON84JCWNCdxX4WrUfwBFVI54pTvQRsXPLD4/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzsteMJfJ-bDgJh6fttd4YpchCaNlcHi4eQDFGChS0w8NS9zmVUApw1j2KZc95n7O2X/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-5">Volver</button>
+    </div>
+    <div id="subjects-1-6" class="buttons" style="display:none;">
+      <h2>Curso 1°6°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx9EN_LrQBd1O6KUfE54gkM0afy-LyNmSYRf_LB21PICZP5GcetHL43JYJC9KKxarf-/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxMgweOeRIlRNv3Pu1aB6oZKPaUDfLVTPiqaHi3g9szInGp2wSHrFxuYI2Pm-YQIwwQtA/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9aXgLPMX0tXDDONcKNNxnQIrjJ2k6E-Ful9XOoH6Qg0OmWrIXZ62qZMBAUTzci-zrVQ/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-6">Volver</button>
+    </div>
+    <div id="subjects-1-7" class="buttons" style="display:none;">
+      <h2>Curso 1°7°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx5DxEFlN5GtDZgV8AI7zeYilHjHj5yAxF3QZ3YvHtlwWrZZ9aGXTZNp26HHK3eURi5/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxXObH0cGpQawoLxgJJ-GLFTjLV42c7xrNWoFwK9rgpvY4NYfNQHfw7BXOoAybXW_tH/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzbBtCObDkWehDaCqSYnV8Aj3v6yvM4XRjQLJ57QmA3kv38UrN59pz2ESGaf8VuBu4v/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-1-7">Volver</button>
+    </div>
+
+   
+    <!-- Subject menus for each 2° item -->
+    <div id="subjects-2-1" class="buttons" style="display:none;">
+      <h2>Curso 2°1°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzGG3R1SLBz7IRNgNwAG1l-pTrxelHiCDINlS6nPrNFQ_AeM1ekbb2UWX9bxE89ZrpUxQ/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxaOLS4R6EbwmUKKn-Klo5xZd1R_B7kW48zB6yiXBCxuiocIVS0inyWAiO4jY95OLO3TA/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyerXXIj-rFlkyHOlyTHbXHl1V6lPltcXabaWIo3HcRT1NWnuvxjvDqe_BGa3MUFmro8Q/exec">Procedimientos Tecnicos</button>
+   
+      <button id="back-2-1">Volver</button>
+    </div>
+    <div id="subjects-2-2" class="buttons" style="display:none;">
+      <h2>Curso 2°2°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbysuYvPtAktfhO8fr8oiPAaRzuXNjXzsVHq-zyxpWHf7JnchyXQg0ZVpW8Y7BZPS8SL/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwnpxWrx97jMhH7vEEA70vKu8eEh9ROddaGW242CGNd9MwOdp5sabVOIDlq0nU1nrmd/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyCn3wd9JaCqyiZ41P7uXAk29H_d8qxvoRf9dwxaVkM-ZqfNAvZggMpdMgm0u4gDT1S/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-2-2">Volver</button>
+    </div>
+    <div id="subjects-2-3" class="buttons" style="display:none;">
+      <h2>Curso 2°3°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzR6Ctd_-IrGJn8ooAGYiYVSgRiK0i2jhKF5dG-iqZS73t7MmWk5Ve6GGtpwOoIU7Cp/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxKlJtEDraDNOhxInGIQ4343tJuOozM_f81lqNtX7urodm4_OcA1U_plNZQi7lK1Z3G/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxrYcLC6FoDhWAMt7zrYMCSQK7zwmdjMSvlsid1NPOrVqXd7cLTjqxbBfyxJ4_EVcO0/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-2-3">Volver</button>
+    </div>
+    <div id="subjects-2-4" class="buttons" style="display:none;">
+      <h2>Curso 2°4°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxmYgY6U7qnD9n1ZJ9_y5vcpRm1TVTKSdc8e-JaoDZN_0c1ySLpcAAOdXOHLcWIoT79Pg/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwcvH9NfVzMw5JISsYRXnInUXzuhHcvc47pwqglppBat__yOsk3hDk03Bl2ll_GRsNS6Q/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzB322kjLQsPvtItUsyj2pyFKor3GjxThBo9OAK0_PYU7LC0kwS66C3oqC_w9WTtOQaiQ/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-2-4">Volver</button>
+    </div>
+    <div id="subjects-2-5" class="buttons" style="display:none;">
+      <h2>Curso 2°5°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyYPLQEtCNd2xoS9wDsQkwzk33Il-syuCnOi0LdZNf_VP-cjkz2Zu4M1girk1CRSWZp-g/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz0NX7np4c3sTBdpXcBCyeWO5SM89o8UQBYIaUHEDsEKuLedAMJ1pv7Gl2UQtvv2c-y9Q/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjp8FgHPWwiJFy0dxhWSYKbtPwDRdGY0lTyiuBxNuwdECU8ZlZvZAfYiy6odFRcknd3g/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-2-5">Volver</button>
+    </div>
+    <div id="subjects-2-6" class="buttons" style="display:none;">
+      <h2>Curso 2°6°</h2>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxz5ZRFJHh2x4UTqjcVEch7iO6k8xxhCXu5txhdImx_CZeo4HWrHPCFb1aEgoUQnFvH/exec">Lenguajes Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwy5QpZM7bVt-vgJNlvhR01KT09z1uF2rJU3K0-z1EWnxZPAdrAUUXpc1OHya6y5gLP/exec">Sistemas Tecnologicos</button>
+      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzKKDGnAvlAXRxN3C7lJUl4ZjndqaERSUmfMqPiHlUbNKIWhs22FeDv7qJpxzKm9qas/exec">Procedimientos Tecnicos</button>
+      
+      <button id="back-2-6">Volver</button>
+    </div>
+
+
+    <!-- Subject menus para cada 3° -->
+    <div id="subjects-3-1" class="buttons" style="display:none;">
+      <h2>Curso 3°1°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-1">Volver</button>
+    </div>
+    <div id="subjects-3-2" class="buttons" style="display:none;">
+      <h2>Curso 3°2°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-2">Volver</button>
+    </div>
+    <div id="subjects-3-3" class="buttons" style="display:none;">
+      <h2>Curso 3°3°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-3">Volver</button>
+    </div>
+    <div id="subjects-3-4" class="buttons" style="display:none;">
+      <h2>Curso 3°4°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-4">Volver</button>
+    </div>
+    <div id="subjects-3-5" class="buttons" style="display:none;">
+      <h2>Curso 3°5°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-5">Volver</button>
+    </div>
+    <div id="subjects-3-6" class="buttons" style="display:none;">
+      <h2>Curso 3°6°</h2>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+      <button id="back-3-6">Volver</button>
+    </div>
+  
+    
+    <!-- Subject menus para 4° items especificados -->
+    <div id="subjects-4-1" class="buttons" style="display:none;">
+      <h2>Curso 4°A°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matemática</button>
+      <button data-url="">Educación Física</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Nticx</button>
+      <button data-url="">Salud y Adolescencia</button>
+      <button data-url="">Introducción a la Física</button>
+      <button data-url="">Biología</button>
+      <button data-url="">Historia</button>
+      <button data-url="">Geografía</button>
+      <button data-url="">Sistema de Información Contable</button>
+      <button data-url="">Teoría de las Organizaciones</button>
+      <button id="back-4-1">Volver</button>
+    </div>
+    <div id="subjects-4-2" class="buttons" style="display:none;">
+      <h2>Curso 4°B°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matematica</button>
+      <button data-url="">Educacion Fisica</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Nticx</button>
+      <button data-url="">Salud y Adolescencia</button>
+      <button data-url="">Introducción a la Física</button>
+      <button data-url="">Biología</button>
+      <button data-url="">Historia</button>
+      <button data-url="">Geografía</button>
+      <button data-url="">Psicología</button>
+      <button id="back-4-2">Volver</button>
+    </div>
+   
+    <!-- Subject menus para 5° items especificados -->
+    <div id="subjects-5-1" class="buttons" style="display:none;">
+      <h2>Curso 5°A°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matemática</button>
+      <button data-url="">Educación Física</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Política y Ciudadanía</button>
+      <button data-url="">Introducción a la Química</button>
+      <button data-url="">Historia</button>
+      <button data-url="">Geografía</button>
+      <button data-url="">Elementos de Micro y Macro Economía</button>
+      <button data-url="">Derecho</button>
+      <button data-url="">Sistema de Información Contable</button>
+      <button data-url="">Gestión Organizacional</button>
+      <button id="back-5-1">Volver</button>
+    </div>
+    <div id="subjects-5-2" class="buttons" style="display:none;">
+      <h2>Curso 5°B°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matematica</button>
+      <button data-url="">Educacion Fisica</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Política y Ciudadanía</button>
+      <button data-url="">Introducción a la Química</button>
+      <button data-url="">Historia</button>
+      <button data-url="">Comunicación, Cultura y Sociedad</button>
+      <button data-url="">Geografía</button>
+      <button data-url="">Economía Política</button>
+      <button data-url="">Sociología</button>
+      <button id="back-5-2">Volver</button>
+    </div>
+   
+    <!-- Subject menus para 6° items especificados -->
+    <div id="subjects-6-1" class="buttons" style="display:none;">
+      <h2>Curso 6°A°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matemática</button>
+      <button data-url="">Educación Física</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Trabajo y Ciudadanía</button>
+      <button data-url="">Filosofía</button>
+      <button data-url="">Arte</button>
+      <button data-url="">Economía Política</button>
+      <button data-url="">Proyectos  Organizacionales</button>
+      <button id="back-6-1">Volver</button>
+    </div>
+    <div id="subjects-6-2" class="buttons" style="display:none;">
+      <h2>Curso 6°B°</h2>
+      <button data-url="">Literatura</button>
+      <button data-url="">Matemática</button>
+      <button data-url="">Educación Física</button>
+      <button data-url="">Inglés</button>
+      <button data-url="">Trabajo y Ciudadanía</button>
+      <button data-url="">Filosofía</button>
+      <button data-url="">Arte</button>
+      <button data-url="">Historia</button>
+      <button data-url=""> Geografia</button>
+      <button data-url=""> Proyecto de Inv. en Cs</button>
+      <button id="back-6-2">Volver</button>
+    </div>
+    
+ 
+  </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Auto-unregister old service workers to avoid caching stale JS
+  // Service Worker deshabilitado para pruebas locales
+  // Para producción, usa un servidor web y descomenta el siguiente código:
+  /*
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+    
+    // Register new service worker
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js').then(function(registration) {
+        console.log('ServiceWorker registration successful');
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+  */
+  const mainMenu = document.getElementById('main-menu');
+  
+
+  // Grades 1–6
+  ['1','2','3','4','5','6'].forEach(function(n) {
+    const btn = document.getElementById('btn' + n);
+    const sub = document.getElementById('submenu-' + n);
+    const back = document.getElementById('back' + n);
+    if (btn && sub && back) {
+      btn.onclick = function() { mainMenu.style.display = 'none'; sub.style.display = 'flex'; };
+      back.onclick = function() { sub.style.display = 'none'; mainMenu.style.display = 'flex'; };
+    }
+  });
+  // Cursos principales (1°-6°)
+  ['1-1','1-2','1-3','1-4','1-5','1-6',
+   '2-1','2-2','2-3','2-4','2-5','2-6',
+   '3-1','3-2','3-3','3-4','3-5','3-6',
+   '4-1','4-2','4-3','4-4','4-5','4-7','4-8','4-10',
+   '5-1','5-2','5-3','5-4','5-5','5-7','5-8','5-10',
+   '6-1','6-2','6-3','6-4','6-5','6-10']
+  .forEach(function(code) {
+    const grade = code.split('-')[0];
+    const btn = document.getElementById('btn' + code);
+    const sub = document.getElementById('subjects-' + code);
+    const back = document.getElementById('back-' + code);
+    if (btn && sub && back) {
+      btn.onclick = function() {
+        document.getElementById('submenu-' + grade).style.display = 'none';
+        sub.style.display = 'flex';
+      };
+      back.onclick = function() {
+        sub.style.display = 'none';
+        document.getElementById('submenu-' + grade).style.display = 'flex';
+      };
+    }
+  });
+  // Navigation for data-url
+  document.querySelectorAll('button[data-url]').forEach(function(b) {
+    b.onclick = function() {
+      if (b.dataset.url) {
+        window.open(b.dataset.url, '_blank');
+      }
+    };
+  });
+
+  // Botón de instalación
+  const installBtn = document.getElementById('btn-install');
+  let deferredPrompt;
+  
+  // Estilos para el botón de instalación
+  installBtn.style.padding = '10px 20px';
+  installBtn.style.margin = '10px';
+  installBtn.style.borderRadius = '5px';
+  installBtn.style.backgroundColor = '#4CAF50';
+  installBtn.style.color = 'white';
+  installBtn.style.border = 'none';
+  installBtn.style.cursor = 'pointer';
+
+  // Evento para cuando el navegador ofrece la opción de instalar
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+
+    installBtn.onclick = () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('Usuario aceptó la instalación');
+            installBtn.style.display = 'none';
+          } else {
+            console.log('Usuario rechazó la instalación');
+          }
+          deferredPrompt = null;
+        });
+      }
+    };
+  });
+
+  // Mostrar el botón de instalación en todos los dispositivos
+  installBtn.style.display = 'inline-block';
+  // Código de submenu-preceptores eliminado
+});
+</script>
+</html>
