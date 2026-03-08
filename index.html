@@ -35,11 +35,8 @@
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       background-color: var(--primary-bg);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
       min-height: 100vh;
       overflow-y: auto;
       color: var(--text-color);
@@ -55,6 +52,7 @@
       border-radius: 12px;
       box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 8px 32px rgba(0,0,0,0.2);
       animation: glow-colors 8s ease-in-out infinite;
+      min-height: 500px;
     }
     .container h1 {
       margin-bottom: 30px;
@@ -74,6 +72,16 @@
       flex-direction: column;
       align-items: center;
       gap: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    [id^="subjects-"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 300px;
     }
     .buttons button {
       background: rgba(255,255,255,0.2);
@@ -87,6 +95,7 @@
       color: #fff;
       cursor: pointer;
       transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      margin: 0 auto !important;
     }
     .buttons button:hover {
       background: rgba(255,255,255,0.4);
@@ -165,8 +174,6 @@
       <button id="btn3-4">3°4°</button>
       <button id="btn3-5">3°5°</button>
       <button id="btn3-6">3°6°</button>
-      
-      
       <button id="back3">Volver</button>
     </div>
     <!-- Submenu para 4° -->
@@ -205,7 +212,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx8jpIm5FjdLyBVaLOXwbAV2g_OD5ejtBPT5mUCkyD8JM-fxSiVr499Q-yIHUVIP_rFuA/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9ZL8SdXs5BMRnLYU4gqE5KLbZakyUvrBd3UIEfenHUK0Irp2cK61aG_OAYfGBn8uhHg/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzXR9KjpS4Q53f0GHhFGa2703uWJSB6qZp4jH5kxKE7mxR8uI9JMna75yrxviBUqtU7BA/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-1">Volver</button>
     </div>
     <div id="subjects-1-2" class="buttons" style="display:none;">
@@ -213,7 +219,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzwSjwDK-O44m0mHferXV89FitUdRLzlPxGoGKx0k9hJa4G-NxagiVBe1kLtGttTFnHmQ/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyStPHi2Xq_u09MP6NcR-Fu15eSayYnEIo_08gocFOuhr-cvn3Mh9jCkoZ9H_37rnrXCA/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbycT6k7TZAJ18TLk2_qHDYcKh_h1NX1Vsb99JMbaHfXNGB_kHxrVA3M4LvX2-k7axwJcg/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-2">Volver</button>
     </div>
     <div id="subjects-1-3" class="buttons" style="display:none;">
@@ -221,7 +226,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyrh9HFZlXpy_pT806RpyWI42eOuJLColkTfhw8xQ6szzxU66qzkCNiZeYXS-hQtA3s/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxh2wkYdywluhCYs8fkKJEi5DpRlUldx66L_rO7RWhjn2zZVEIO4DjO2J-FW04g9nd6/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjLGI6vIRfzSe4p-7onEzqkC-L1JMau21Kwye8pTEUMjdIbPbvwYI-zgDhtHlqqaHw/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-3">Volver</button>
     </div>
     <div id="subjects-1-4" class="buttons" style="display:none;">
@@ -229,7 +233,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz5a8yPKyyRKyUzooKEMN-Yekft_q9fj1ie-T-hn2ONpSZZ5taW_ySGiYu_f4kMUdrV/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwQT3ZaWXUrN7h3x9hTzx6KZNw2B086kU-7fr14HHu5CpCFVBEPmLE6YYrC8XvYROmR/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyyw1BUfxikboOo4ZKnkWM8j6fk_x7oBV9C-2_FrVqXx-LXmrsmxV1KSnlLmrGlLA/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-4">Volver</button>
     </div>
     <div id="subjects-1-5" class="buttons" style="display:none;">
@@ -237,7 +240,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyJLnkQxWShD2vXwh2f7VhBn7VGXzudf20zgNpKAATjyE-7BupsTz8963bJZWPL494D/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwuFLczH6I6WYIIUI5pbm57NPlDnM5uUON84JCWNCdxX4WrUfwBFVI54pTvQRsXPLD4/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzsteMJfJ-bDgJh6fttd4YpchCaNlcHi4eQDFGChS0w8NS9zmVUApw1j2KZc95n7O2X/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-5">Volver</button>
     </div>
     <div id="subjects-1-6" class="buttons" style="display:none;">
@@ -245,7 +247,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx9EN_LrQBd1O6KUfE54gkM0afy-LyNmSYRf_LB21PICZP5GcetHL43JYJC9KKxarf-/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxMgweOeRIlRNv3Pu1aB6oZKPaUDfLVTPiqaHi3g9szInGp2wSHrFxuYI2Pm-YQIwwQtA/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9aXgLPMX0tXDDONcKNNxnQIrjJ2k6E-Ful9XOoH6Qg0OmWrIXZ62qZMBAUTzci-zrVQ/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-6">Volver</button>
     </div>
     <div id="subjects-1-7" class="buttons" style="display:none;">
@@ -253,7 +254,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx5DxEFlN5GtDZgV8AI7zeYilHjHj5yAxF3QZ3YvHtlwWrZZ9aGXTZNp26HHK3eURi5/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxXObH0cGpQawoLxgJJ-GLFTjLV42c7xrNWoFwK9rgpvY4NYfNQHfw7BXOoAybXW_tH/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzbBtCObDkWehDaCqSYnV8Aj3v6yvM4XRjQLJ57QmA3kv38UrN59pz2ESGaf8VuBu4v/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-1-7">Volver</button>
     </div>
 
@@ -264,7 +264,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzGG3R1SLBz7IRNgNwAG1l-pTrxelHiCDINlS6nPrNFQ_AeM1ekbb2UWX9bxE89ZrpUxQ/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxaOLS4R6EbwmUKKn-Klo5xZd1R_B7kW48zB6yiXBCxuiocIVS0inyWAiO4jY95OLO3TA/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyerXXIj-rFlkyHOlyTHbXHl1V6lPltcXabaWIo3HcRT1NWnuvxjvDqe_BGa3MUFmro8Q/exec">Procedimientos Tecnicos</button>
-   
       <button id="back-2-1">Volver</button>
     </div>
     <div id="subjects-2-2" class="buttons" style="display:none;">
@@ -272,7 +271,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbysuYvPtAktfhO8fr8oiPAaRzuXNjXzsVHq-zyxpWHf7JnchyXQg0ZVpW8Y7BZPS8SL/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwnpxWrx97jMhH7vEEA70vKu8eEh9ROddaGW242CGNd9MwOdp5sabVOIDlq0nU1nrmd/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyCn3wd9JaCqyiZ41P7uXAk29H_d8qxvoRf9dwxaVkM-ZqfNAvZggMpdMgm0u4gDT1S/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-2-2">Volver</button>
     </div>
     <div id="subjects-2-3" class="buttons" style="display:none;">
@@ -280,7 +278,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzR6Ctd_-IrGJn8ooAGYiYVSgRiK0i2jhKF5dG-iqZS73t7MmWk5Ve6GGtpwOoIU7Cp/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxKlJtEDraDNOhxInGIQ4343tJuOozM_f81lqNtX7urodm4_OcA1U_plNZQi7lK1Z3G/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxrYcLC6FoDhWAMt7zrYMCSQK7zwmdjMSvlsid1NPOrVqXd7cLTjqxbBfyxJ4_EVcO0/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-2-3">Volver</button>
     </div>
     <div id="subjects-2-4" class="buttons" style="display:none;">
@@ -288,7 +285,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxmYgY6U7qnD9n1ZJ9_y5vcpRm1TVTKSdc8e-JaoDZN_0c1ySLpcAAOdXOHLcWIoT79Pg/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwcvH9NfVzMw5JISsYRXnInUXzuhHcvc47pwqglppBat__yOsk3hDk03Bl2ll_GRsNS6Q/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzB322kjLQsPvtItUsyj2pyFKor3GjxThBo9OAK0_PYU7LC0kwS66C3oqC_w9WTtOQaiQ/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-2-4">Volver</button>
     </div>
     <div id="subjects-2-5" class="buttons" style="display:none;">
@@ -296,7 +292,6 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyYPLQEtCNd2xoS9wDsQkwzk33Il-syuCnOi0LdZNf_VP-cjkz2Zu4M1girk1CRSWZp-g/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz0NX7np4c3sTBdpXcBCyeWO5SM89o8UQBYIaUHEDsEKuLedAMJ1pv7Gl2UQtvv2c-y9Q/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjp8FgHPWwiJFy0dxhWSYKbtPwDRdGY0lTyiuBxNuwdECU8ZlZvZAfYiy6odFRcknd3g/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-2-5">Volver</button>
     </div>
     <div id="subjects-2-6" class="buttons" style="display:none;">
@@ -304,11 +299,8 @@
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxz5ZRFJHh2x4UTqjcVEch7iO6k8xxhCXu5txhdImx_CZeo4HWrHPCFb1aEgoUQnFvH/exec">Lenguajes Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwy5QpZM7bVt-vgJNlvhR01KT09z1uF2rJU3K0-z1EWnxZPAdrAUUXpc1OHya6y5gLP/exec">Sistemas Tecnologicos</button>
       <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzKKDGnAvlAXRxN3C7lJUl4ZjndqaERSUmfMqPiHlUbNKIWhs22FeDv7qJpxzKm9qas/exec">Procedimientos Tecnicos</button>
-      
       <button id="back-2-6">Volver</button>
     </div>
-
-
     <!-- Subject menus para cada 3° -->
     <div id="subjects-3-1" class="buttons" style="display:none;">
       <h2>Curso 3°1°</h2>
@@ -380,8 +372,6 @@
       <button data-url="">Laboratorio de Hardware</button>
       <button data-url="">Laboratorio de Sistemas Operativos</button>
       <button data-url="">Laboratorio de Programación</button>
-      
-
       <button id="back-4-3">Volver</button>
     </div>
     <div id="subjects-4-4" class="buttons" style="display:none;">
@@ -390,7 +380,6 @@
       <button data-url="">Laboratorio de Hardware</button>
       <button data-url="">Laboratorio de Sistemas Operativos</button>
       <button data-url="">Laboratorio de Programación</button>
-
       <button id="back-4-4">Volver</button>
     </div>
     <div id="subjects-4-5" class="buttons" style="display:none;">
@@ -399,7 +388,6 @@
       <button data-url="">Laboratorio de Hardware</button>
       <button data-url="">Laboratorio de Sistemas Operativos</button>
       <button data-url="">Laboratorio de Programación</button>
-
       <button id="back-4-5">Volver</button>
     </div>
     <div id="subjects-4-6" class="buttons" style="display:none;">
@@ -415,7 +403,7 @@
    
     <!-- Subject menus para 5° items especificados -->
     <div id="subjects-5-1" class="buttons" style="display:none;">
-      <h2>Curso 5°A°</h2>
+      <h2>Curso 5°1°</h2>
       <button data-url="">Literatura</button>
       <button data-url="">Matemática</button>
       <button data-url="">Educación Física</button>
