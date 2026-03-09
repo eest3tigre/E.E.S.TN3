@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escuela de Educación Secundaria Tecnica N° 3</title>
+  <title>E.E.S.T 3</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/logo192.png" sizes="192x192" type="image/png">
   <link rel="icon" href="icons/logo512.png" sizes="512x512" type="image/png">
@@ -35,8 +35,11 @@
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background-color: var(--primary-bg);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
       min-height: 100vh;
       overflow-y: auto;
       color: var(--text-color);
@@ -52,7 +55,6 @@
       border-radius: 12px;
       box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 8px 32px rgba(0,0,0,0.2);
       animation: glow-colors 8s ease-in-out infinite;
-      min-height: 500px;
     }
     .container h1 {
       margin-bottom: 30px;
@@ -72,16 +74,6 @@
       flex-direction: column;
       align-items: center;
       gap: 15px;
-      text-align: center;
-      width: 100%;
-    }
-    [id^="subjects-"] {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 300px;
     }
     .buttons button {
       background: rgba(255,255,255,0.2);
@@ -95,7 +87,6 @@
       color: #fff;
       cursor: pointer;
       transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-      margin: 0 auto !important;
     }
     .buttons button:hover {
       background: rgba(255,255,255,0.4);
@@ -111,6 +102,35 @@
     @keyframes glow-btn {
       0%, 100% { box-shadow: 0 0 15px var(--accent); }
       50%       { box-shadow: 0 0 15px var(--glow-stop-1); }
+    }
+    
+    /* Asegurar que los menús de materias estén dentro del contenedor */
+    .buttons[style*="display: flex"] {
+      position: relative !important;
+      z-index: 1;
+    }
+    
+    /* CSS específico para menús de 7° */
+    #subjects-7-1, #subjects-7-2, #subjects-7-3, #subjects-7-4, #subjects-7-5, #subjects-7-6 {
+      position: relative !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 20px !important;
+      box-sizing: border-box !important;
+      display: none !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 15px !important;
+    }
+    
+    #subjects-7-1[style*="flex"], 
+    #subjects-7-2[style*="flex"], 
+    #subjects-7-3[style*="flex"], 
+    #subjects-7-4[style*="flex"], 
+    #subjects-7-5[style*="flex"], 
+    #subjects-7-6[style*="flex"] {
+      display: flex !important;
     }
     @media (max-width: 768px) {
       .container { 
@@ -131,7 +151,7 @@
 </head>
 <body>
   <div class="container">
-      <h1>Escuela de Educacion Secundaria Tecnica N° 3</h1>
+      <h1>E.E.S.T 3</h1>
     <img src="images/logo.png" alt="Logo" class="logo">
     <div id="main-menu" class="buttons">
       <button id="btn1">1°</button>
@@ -174,6 +194,7 @@
       <button id="btn3-4">3°4°</button>
       <button id="btn3-5">3°5°</button>
       <button id="btn3-6">3°6°</button>
+      
       <button id="back3">Volver</button>
     </div>
     <!-- Submenu para 4° -->
@@ -195,7 +216,6 @@
       <button id="btn5-4">5°4°</button>
       <button id="btn5-5">5°5°</button>
       <button id="btn5-6">5°6°</button>
-    </div>
      
       <button id="back5">Volver</button>
     </div>
@@ -203,293 +223,513 @@
     <div id="submenu-6" class="buttons" style="display:none;">
       <button id="btn6-1">6°1°</button>
       <button id="btn6-2">6°2°</button>
-    
+      <button id="btn6-3">6°3°</button>
+      <button id="btn6-4">6°4°</button>
+      <button id="btn6-5">6°5°</button>
+      <button id="btn6-6">6°6°</button>
       <button id="back6">Volver</button>
+    </div>
+    <div id="submenu-7" class="buttons" style="display:none;">
+      <button id="btn7-1">7°1°</button>
+      <button id="btn7-2">7°2°</button>
+      <button id="btn7-3">7°3°</button>
+      <button id="btn7-4">7°4°</button>
+      <button id="btn7-5">7°5°</button>
+      <button id="btn7-6">7°6°</button>
+      <button id="back7">Volver</button>
     </div>
     <!-- Subject menus for each 1° item -->
     <div id="subjects-1-1" class="buttons" style="display:none;">
       <h2>Curso 1°1°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx8jpIm5FjdLyBVaLOXwbAV2g_OD5ejtBPT5mUCkyD8JM-fxSiVr499Q-yIHUVIP_rFuA/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9ZL8SdXs5BMRnLYU4gqE5KLbZakyUvrBd3UIEfenHUK0Irp2cK61aG_OAYfGBn8uhHg/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzXR9KjpS4Q53f0GHhFGa2703uWJSB6qZp4jH5kxKE7mxR8uI9JMna75yrxviBUqtU7BA/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
+     
       <button id="back-1-1">Volver</button>
     </div>
     <div id="subjects-1-2" class="buttons" style="display:none;">
       <h2>Curso 1°2°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzwSjwDK-O44m0mHferXV89FitUdRLzlPxGoGKx0k9hJa4G-NxagiVBe1kLtGttTFnHmQ/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyStPHi2Xq_u09MP6NcR-Fu15eSayYnEIo_08gocFOuhr-cvn3Mh9jCkoZ9H_37rnrXCA/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbycT6k7TZAJ18TLk2_qHDYcKh_h1NX1Vsb99JMbaHfXNGB_kHxrVA3M4LvX2-k7axwJcg/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-2">Volver</button>
     </div>
     <div id="subjects-1-3" class="buttons" style="display:none;">
       <h2>Curso 1°3°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyrh9HFZlXpy_pT806RpyWI42eOuJLColkTfhw8xQ6szzxU66qzkCNiZeYXS-hQtA3s/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxh2wkYdywluhCYs8fkKJEi5DpRlUldx66L_rO7RWhjn2zZVEIO4DjO2J-FW04g9nd6/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjLGI6vIRfzSe4p-7onEzqkC-L1JMau21Kwye8pTEUMjdIbPbvwYI-zgDhtHlqqaHw/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-3">Volver</button>
     </div>
     <div id="subjects-1-4" class="buttons" style="display:none;">
       <h2>Curso 1°4°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz5a8yPKyyRKyUzooKEMN-Yekft_q9fj1ie-T-hn2ONpSZZ5taW_ySGiYu_f4kMUdrV/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwQT3ZaWXUrN7h3x9hTzx6KZNw2B086kU-7fr14HHu5CpCFVBEPmLE6YYrC8XvYROmR/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyyw1BUfxikboOo4ZKnkWM8j6fk_x7oBV9C-2_FrVqXx-LXmrsmxV1KSnlLmrGlLA/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-4">Volver</button>
     </div>
     <div id="subjects-1-5" class="buttons" style="display:none;">
       <h2>Curso 1°5°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyJLnkQxWShD2vXwh2f7VhBn7VGXzudf20zgNpKAATjyE-7BupsTz8963bJZWPL494D/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwuFLczH6I6WYIIUI5pbm57NPlDnM5uUON84JCWNCdxX4WrUfwBFVI54pTvQRsXPLD4/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzsteMJfJ-bDgJh6fttd4YpchCaNlcHi4eQDFGChS0w8NS9zmVUApw1j2KZc95n7O2X/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-5">Volver</button>
     </div>
     <div id="subjects-1-6" class="buttons" style="display:none;">
       <h2>Curso 1°6°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx9EN_LrQBd1O6KUfE54gkM0afy-LyNmSYRf_LB21PICZP5GcetHL43JYJC9KKxarf-/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxMgweOeRIlRNv3Pu1aB6oZKPaUDfLVTPiqaHi3g9szInGp2wSHrFxuYI2Pm-YQIwwQtA/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz9aXgLPMX0tXDDONcKNNxnQIrjJ2k6E-Ful9XOoH6Qg0OmWrIXZ62qZMBAUTzci-zrVQ/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-6">Volver</button>
     </div>
     <div id="subjects-1-7" class="buttons" style="display:none;">
       <h2>Curso 1°7°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx5DxEFlN5GtDZgV8AI7zeYilHjHj5yAxF3QZ3YvHtlwWrZZ9aGXTZNp26HHK3eURi5/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxXObH0cGpQawoLxgJJ-GLFTjLV42c7xrNWoFwK9rgpvY4NYfNQHfw7BXOoAybXW_tH/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzbBtCObDkWehDaCqSYnV8Aj3v6yvM4XRjQLJ57QmA3kv38UrN59pz2ESGaf8VuBu4v/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-1-7">Volver</button>
     </div>
-
    
     <!-- Subject menus for each 2° item -->
     <div id="subjects-2-1" class="buttons" style="display:none;">
       <h2>Curso 2°1°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzGG3R1SLBz7IRNgNwAG1l-pTrxelHiCDINlS6nPrNFQ_AeM1ekbb2UWX9bxE89ZrpUxQ/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxaOLS4R6EbwmUKKn-Klo5xZd1R_B7kW48zB6yiXBCxuiocIVS0inyWAiO4jY95OLO3TA/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyerXXIj-rFlkyHOlyTHbXHl1V6lPltcXabaWIo3HcRT1NWnuvxjvDqe_BGa3MUFmro8Q/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-1">Volver</button>
     </div>
+   
+     
     <div id="subjects-2-2" class="buttons" style="display:none;">
       <h2>Curso 2°2°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbysuYvPtAktfhO8fr8oiPAaRzuXNjXzsVHq-zyxpWHf7JnchyXQg0ZVpW8Y7BZPS8SL/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwnpxWrx97jMhH7vEEA70vKu8eEh9ROddaGW242CGNd9MwOdp5sabVOIDlq0nU1nrmd/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyCn3wd9JaCqyiZ41P7uXAk29H_d8qxvoRf9dwxaVkM-ZqfNAvZggMpdMgm0u4gDT1S/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-2">Volver</button>
     </div>
     <div id="subjects-2-3" class="buttons" style="display:none;">
       <h2>Curso 2°3°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzR6Ctd_-IrGJn8ooAGYiYVSgRiK0i2jhKF5dG-iqZS73t7MmWk5Ve6GGtpwOoIU7Cp/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxKlJtEDraDNOhxInGIQ4343tJuOozM_f81lqNtX7urodm4_OcA1U_plNZQi7lK1Z3G/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxrYcLC6FoDhWAMt7zrYMCSQK7zwmdjMSvlsid1NPOrVqXd7cLTjqxbBfyxJ4_EVcO0/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-3">Volver</button>
     </div>
     <div id="subjects-2-4" class="buttons" style="display:none;">
       <h2>Curso 2°4°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxmYgY6U7qnD9n1ZJ9_y5vcpRm1TVTKSdc8e-JaoDZN_0c1ySLpcAAOdXOHLcWIoT79Pg/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwcvH9NfVzMw5JISsYRXnInUXzuhHcvc47pwqglppBat__yOsk3hDk03Bl2ll_GRsNS6Q/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzB322kjLQsPvtItUsyj2pyFKor3GjxThBo9OAK0_PYU7LC0kwS66C3oqC_w9WTtOQaiQ/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-4">Volver</button>
     </div>
     <div id="subjects-2-5" class="buttons" style="display:none;">
       <h2>Curso 2°5°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyYPLQEtCNd2xoS9wDsQkwzk33Il-syuCnOi0LdZNf_VP-cjkz2Zu4M1girk1CRSWZp-g/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz0NX7np4c3sTBdpXcBCyeWO5SM89o8UQBYIaUHEDsEKuLedAMJ1pv7Gl2UQtvv2c-y9Q/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzjp8FgHPWwiJFy0dxhWSYKbtPwDRdGY0lTyiuBxNuwdECU8ZlZvZAfYiy6odFRcknd3g/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-5">Volver</button>
     </div>
+
     <div id="subjects-2-6" class="buttons" style="display:none;">
       <h2>Curso 2°6°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxz5ZRFJHh2x4UTqjcVEch7iO6k8xxhCXu5txhdImx_CZeo4HWrHPCFb1aEgoUQnFvH/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwy5QpZM7bVt-vgJNlvhR01KT09z1uF2rJU3K0-z1EWnxZPAdrAUUXpc1OHya6y5gLP/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzKKDGnAvlAXRxN3C7lJUl4ZjndqaERSUmfMqPiHlUbNKIWhs22FeDv7qJpxzKm9qas/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-2-6">Volver</button>
     </div>
+     
+     
+    
     <!-- Subject menus para cada 3° -->
     <div id="subjects-3-1" class="buttons" style="display:none;">
       <h2>Curso 3°1°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwJhIeaRl7zekfhfqT7mKSDHOYYhYc-9XGQkqxmjnCzviU1wNO-gRIRUTLLmlVyfqkV/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz8sJvLSZ69D0hgrRJ3i3Vs6AKcrBDxPrG08oOFuzxtT8fa20toARpzsJek-Oz_bzOU/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz_ZcmsfFY3U_Bmm1_dL7vthlIJxNsDWLpLb56R5CccBlgfe1qwO-deHzV9YpEIVmS4/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-1">Volver</button>
     </div>
+     
+     
+     
+    
+   
     <div id="subjects-3-2" class="buttons" style="display:none;">
       <h2>Curso 3°2°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycby6McjW5t3v4sLKPyefTLUzexIgvXn6QTvOKGjVxHNG2sYT083GOuCExLvmOCaF1xMf/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbz3g8bFvwcfrzv0dIKKow3BPEtxfNpnlq8q-XbIy6WjM3pE283d0QjMp8Z3hYZD6kZH/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwtvb3kx4aUr06iXYFU65ZNCjDWX6Mz-L2vl1tpoqZ4442fA8VKWeiGa73ZrXHy3HgH/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-2">Volver</button>
     </div>
+   
     <div id="subjects-3-3" class="buttons" style="display:none;">
       <h2>Curso 3°3°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwncd5ZJSxqvSzCT8KNtYvcW85vxCq03uHNNMngXrteP_QvWPxdevM2Mh7bbHvcBc5e/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxbjKG2urL4wfLu4uf4VFNXCRdmklBaAuHEMzTGYMpMG9cmn46LgT5l8l9drBS8vQVd/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxByF-fMntwp121OHuNYb3paxBI2fRfcYDuEAcDweuhijAwkh1LaM6p1x_HaYCU-lZo/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-3">Volver</button>
     </div>
     <div id="subjects-3-4" class="buttons" style="display:none;">
       <h2>Curso 3°4°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbznSG_p8TVgfa8Zk8-CrK-LMgS5VdvcizVNi55ZWn3tZg8zW0p9bsEojqZt7XoRIC7jWg/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyk6YwTmO8HTezGH9Z9JTjG92tLCckzjWdPkc1jhegXHC6SquRahOLjGUXpNhUuIxFGlg/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbwDbW3hdRpEKJlNo5lzIpqau6sAjQKbcbjrQo7TfWksP-GwG87lXPQOLDoS_Zktk4QOQA/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-4">Volver</button>
     </div>
     <div id="subjects-3-5" class="buttons" style="display:none;">
       <h2>Curso 3°5°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzqOqdqr6I2Bg7GvGIQyArKgXKqTeSZK0j0jJaynlgBca7j_AoT9dqh9mVxj6MHot2ZNA/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbxmavMHJuWbOa8JEwBB4xttypkGTNhZqJsM4veAgZaLb4XU3XezdqFa3yxSdF__ug7k7w/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzChJl2IibO3Rj_E_JNv7cAuBuGbsRrSHvBF5HHiSCFyXNq_v4L_KQpcXdl2Jdyuiyr9g/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-5">Volver</button>
     </div>
-    <div id="subjects-3-6" class="buttons" style="display:none;">
+<div id="subjects-3-6" class="buttons" style="display:none;">
       <h2>Curso 3°6°</h2>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbx1tH0xnNDku5YPQBpQuU5Y3DIQbqg3exohGu_TkIB5GgXG5spGaBue0ufuxZLOg7mHmw/exec">Lenguajes Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbzlu5xHxunrljXdoqh29JKRNSvFsRgESsuyxbLaiCB6q4c6uCa8woFK1ErAS2DCTE_9Wg/exec">Sistemas Tecnologicos</button>
-      <button data-url="https://script.google.com/a/macros/escuelatecnicabenavidez.net/s/AKfycbyIOVExD-6Ssj_r_YcjK69y5ob05vr7FFi9qTyV4JpbGzd5srk4KjykZhTNo03FNk0K6g/exec">Procedimientos Tecnicos</button>
+      <button data-url="">Lenguajes Tecnologicos</button>
+      <button data-url="">Sistemas Tecnologicos</button>
+      <button data-url="">Procedimientos Tecnicos</button>
       <button id="back-3-6">Volver</button>
     </div>
-  
-    
+
+
+
+
+
     <!-- Subject menus para 4° items especificados -->
     <div id="subjects-4-1" class="buttons" style="display:none;">
       <h2>Curso 4°1°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matemática</button>
-      <button data-url="">Educación Física</button>
-      <button data-url="">Inglés</button>
-
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
+     
       <button id="back-4-1">Volver</button>
     </div>
     <div id="subjects-4-2" class="buttons" style="display:none;">
       <h2>Curso 4°2°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matematica</button>
-      <button data-url="">Educacion Fisica</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Nticx</button>
-
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
       <button id="back-4-2">Volver</button>
     </div>
-    <div id="subjects-4-3" class="buttons" style="display:none;">
+   <div id="subjects-4-3" class="buttons" style="display:none;">
       <h2>Curso 4°3°</h2>
-      <button data-url="">Laboratorio de Aplicaciones</button>
-      <button data-url="">Laboratorio de Hardware</button>
-      <button data-url="">Laboratorio de Sistemas Operativos</button>
-      <button data-url="">Laboratorio de Programación</button>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
       <button id="back-4-3">Volver</button>
     </div>
-    <div id="subjects-4-4" class="buttons" style="display:none;">
+<div id="subjects-4-4" class="buttons" style="display:none;">
       <h2>Curso 4°4°</h2>
-      <button data-url="">Laboratorio de Aplicaciones</button>
-      <button data-url="">Laboratorio de Hardware</button>
-      <button data-url="">Laboratorio de Sistemas Operativos</button>
-      <button data-url="">Laboratorio de Programación</button>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
       <button id="back-4-4">Volver</button>
     </div>
     <div id="subjects-4-5" class="buttons" style="display:none;">
       <h2>Curso 4°5°</h2>
-      <button data-url="">Laboratorio de Aplicaciones</button>
-      <button data-url="">Laboratorio de Hardware</button>
-      <button data-url="">Laboratorio de Sistemas Operativos</button>
-      <button data-url="">Laboratorio de Programación</button>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
       <button id="back-4-5">Volver</button>
     </div>
     <div id="subjects-4-6" class="buttons" style="display:none;">
       <h2>Curso 4°6°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matematica</button>
-      <button data-url="">Educacion Fisica</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Nticx</button>
-
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Nticx">Nticx</button>
       <button id="back-4-6">Volver</button>
     </div>
-   
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Subject menus para 5° items especificados -->
     <div id="subjects-5-1" class="buttons" style="display:none;">
       <h2>Curso 5°1°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matemática</button>
-      <button data-url="">Educación Física</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Política y Ciudadanía</button>
-      <button data-url="">Introducción a la Química</button>
-      <button data-url="">Historia</button>
-      <button data-url="">Geografía</button>
-      <button data-url="">Elementos de Micro y Macro Economía</button>
-      <button data-url="">Derecho</button>
-      <button data-url="">Sistema de Información Contable</button>
-      <button data-url="">Gestión Organizacional</button>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografía">Geografía</button>
+      <button data-url="Elementos de Micro y Macro Economía">Elementos de Micro y Macro Economía</button>
+      <button data-url="Derecho">Derecho</button>
+      <button data-url="Sistema de Información Contable">Sistema de Información Contable</button>
+      <button data-url="Gestión Organizacional">Gestión Organizacional</button>
       <button id="back-5-1">Volver</button>
     </div>
     <div id="subjects-5-2" class="buttons" style="display:none;">
-      <h2>Curso 5°B°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matematica</button>
-      <button data-url="">Educacion Fisica</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Política y Ciudadanía</button>
-      <button data-url="">Introducción a la Química</button>
-      <button data-url="">Historia</button>
-      <button data-url="">Comunicación, Cultura y Sociedad</button>
-      <button data-url="">Geografía</button>
-      <button data-url="">Economía Política</button>
-      <button data-url="">Sociología</button>
+      <h2>Curso 5°2°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Sociología">Sociología</button>
       <button id="back-5-2">Volver</button>
     </div>
-   
+   <div id="subjects-5-3" class="buttons" style="display:none;">
+      <h2>Curso 5°3°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Sociología">Sociología</button>
+      <button id="back-5-3">Volver</button>
+    </div>
+    <div id="subjects-5-4" class="buttons" style="display:none;">
+      <h2>Curso 5°4°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Sociología">Sociología</button>
+      <button id="back-5-4">Volver</button>
+    </div>
+    <div id="subjects-5-5" class="buttons" style="display:none;">
+      <h2>Curso 5°5°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Sociología">Sociología</button>
+      <button id="back-5-5">Volver</button>
+    </div>
+    <div id="subjects-5-6" class="buttons" style="display:none;">
+      <h2>Curso 5°6°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matematica">Matematica</button>
+      <button data-url="Educacion Fisica">Educacion Fisica</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Política y Ciudadanía">Política y Ciudadanía</button>
+      <button data-url="Introducción a la Química">Introducción a la Química</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Sociología">Sociología</button>
+      <button id="back-5-6">Volver</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Subject menus para 6° items especificados -->
     <div id="subjects-6-1" class="buttons" style="display:none;">
-      <h2>Curso 6°A°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matemática</button>
-      <button data-url="">Educación Física</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Trabajo y Ciudadanía</button>
-      <button data-url="">Filosofía</button>
-      <button data-url="">Arte</button>
-      <button data-url="">Economía Política</button>
-      <button data-url="">Proyectos  Organizacionales</button>
+      <h2>Curso 6°1°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Economía Política">Economía Política</button>
+      <button data-url="Proyectos Organizacionales">Proyectos Organizacionales</button>
       <button id="back-6-1">Volver</button>
     </div>
     <div id="subjects-6-2" class="buttons" style="display:none;">
-      <h2>Curso 6°B°</h2>
-      <button data-url="">Literatura</button>
-      <button data-url="">Matemática</button>
-      <button data-url="">Educación Física</button>
-      <button data-url="">Inglés</button>
-      <button data-url="">Trabajo y Ciudadanía</button>
-      <button data-url="">Filosofía</button>
-      <button data-url="">Arte</button>
-      <button data-url="">Historia</button>
-      <button data-url=""> Geografia</button>
-      <button data-url=""> Proyecto de Inv. en Cs</button>
+      <h2>Curso 6°2°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
       <button id="back-6-2">Volver</button>
     </div>
-    
- 
-  </div>
-</body>
+    <div id="subjects-6-3" class="buttons" style="display:none;">
+      <h2>Curso 6°3°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-6-3">Volver</button>
+    </div>
+    <div id="subjects-6-4" class="buttons" style="display:none;">
+      <h2>Curso 6°4°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-6-4">Volver</button>
+    </div>
+ <div id="subjects-6-5" class="buttons" style="display:none;">
+      <h2>Curso 6°5°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-6-5">Volver</button>
+    </div>
+    <div id="subjects-6-6" class="buttons" style="display:none;">
+      <h2>Curso 6°6°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-6-6">Volver</button>
+    </div>
+    <div id="subjects-7-1" class="buttons" style="display:none;">
+      <h2>Curso 7°1°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-1">Volver</button>
+    </div>
+    <div id="subjects-7-2" class="buttons" style="display:none;">
+      <h2>Curso 7°2°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-2">Volver</button>
+    </div>
+   <div id="subjects-7-3" class="buttons" style="display:none;">
+      <h2>Curso 7°3°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-3">Volver</button>
+    </div>
+   <div id="subjects-7-4" class="buttons" style="display:none;">
+      <h2>Curso 7°4°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-4">Volver</button>
+    </div>
+   <div id="subjects-7-5" class="buttons" style="display:none;">
+      <h2>Curso 7°5°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-5">Volver</button>
+    </div>
+   <div id="subjects-7-6" class="buttons" style="display:none;">
+      <h2>Curso 7°6°</h2>
+      <button data-url="Literatura">Literatura</button>
+      <button data-url="Matemática">Matemática</button>
+      <button data-url="Educación Física">Educación Física</button>
+      <button data-url="Inglés">Inglés</button>
+      <button data-url="Trabajo y Ciudadanía">Trabajo y Ciudadanía</button>
+      <button data-url="Filosofía">Filosofía</button>
+      <button data-url="Arte">Arte</button>
+      <button data-url="Historia">Historia</button>
+      <button data-url="Geografia">Geografia</button>
+      <button data-url="Proyecto de Inv. en Cs">Proyecto de Inv. en Cs</button>
+      <button id="back-7-6">Volver</button>
+    </div>
+</div>
 <script>
+// Esperar a que todo el DOM esté cargado
 document.addEventListener('DOMContentLoaded', function() {
-  // Auto-unregister old service workers to avoid caching stale JS
-  // Service Worker deshabilitado para pruebas locales
-  // Para producción, usa un servidor web y descomenta el siguiente código:
-  /*
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
-    
-    // Register new service worker
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js').then(function(registration) {
-        console.log('ServiceWorker registration successful');
-      }, function(err) {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
-  }
-  */
+  console.log('DOM cargado, configurando navegación...');
+  
   const mainMenu = document.getElementById('main-menu');
   
-
-  // Grades 1–6
-  ['1','2','3','4','5','6'].forEach(function(n) {
+  // Grades 1–8
+  ['1','2','3','4','5','6','7','8'].forEach(function(n) {
     const btn = document.getElementById('btn' + n);
     const sub = document.getElementById('submenu-' + n);
     const back = document.getElementById('back' + n);
@@ -498,19 +738,23 @@ document.addEventListener('DOMContentLoaded', function() {
       back.onclick = function() { sub.style.display = 'none'; mainMenu.style.display = 'flex'; };
     }
   });
-  // Cursos principales (1°-6°)
+  
+  // Cursos principales (1°-8°)
   ['1-1','1-2','1-3','1-4','1-5','1-6','1-7',
    '2-1','2-2','2-3','2-4','2-5','2-6',
    '3-1','3-2','3-3','3-4','3-5','3-6',
-   '4-1','4-2','4-3','4-4','4-5','4-7','4-8','4-10',
-   '5-1','5-2','5-3','5-4','5-5','5-7','5-8','5-10',
-   '6-1','6-2','6-3','6-4','6-5','6-10']
+   '4-1','4-2','4-3','4-4','4-5','4-6','4-7','4-8','4-10',
+   '5-1','5-2','5-3','5-4','5-5','5-6','5-7','5-8','5-10',
+   '6-1','6-2','6-3','6-4','6-5','6-6','6-10',
+   '7-1','7-2','7-3','7-4','7-5','7-6',
+   '8-1','8-2','8-3','8-4','8-5','8-6']
   .forEach(function(code) {
     const grade = code.split('-')[0];
     const btn = document.getElementById('btn' + code);
     const sub = document.getElementById('subjects-' + code);
     const back = document.getElementById('back-' + code);
     if (btn && sub && back) {
+      console.log('Configurando curso general:', code);
       btn.onclick = function() {
         document.getElementById('submenu-' + grade).style.display = 'none';
         sub.style.display = 'flex';
@@ -519,8 +763,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sub.style.display = 'none';
         document.getElementById('submenu-' + grade).style.display = 'flex';
       };
+    } else {
+      console.log('No se encontró elementos para curso:', code, {btn, sub, back});
     }
   });
+  
   // Navigation for data-url
   document.querySelectorAll('button[data-url]').forEach(function(b) {
     b.onclick = function() {
@@ -529,45 +776,165 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
   });
-
-  // Botón de instalación
-  const installBtn = document.getElementById('btn-install');
-  let deferredPrompt;
   
-  // Estilos para el botón de instalación
-  installBtn.style.padding = '10px 20px';
-  installBtn.style.margin = '10px';
-  installBtn.style.borderRadius = '5px';
-  installBtn.style.backgroundColor = '#4CAF50';
-  installBtn.style.color = 'white';
-  installBtn.style.border = 'none';
-  installBtn.style.cursor = 'pointer';
-
-  // Evento para cuando el navegador ofrece la opción de instalar
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBtn.style.display = 'block';
-
-    installBtn.onclick = () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('Usuario aceptó la instalación');
-            installBtn.style.display = 'none';
-          } else {
-            console.log('Usuario rechazó la instalación');
-          }
-          deferredPrompt = null;
-        });
-      }
-    };
+  // Event listeners específicos para botones de 7°
+  console.log('Configurando botones específicos de 7°...');
+  
+  // Botones de cursos de 7°
+  const btn71 = document.getElementById('btn7-1');
+  const btn72 = document.getElementById('btn7-2');
+  const btn73 = document.getElementById('btn7-3');
+  const btn74 = document.getElementById('btn7-4');
+  const btn75 = document.getElementById('btn7-5');
+  const btn76 = document.getElementById('btn7-6');
+  
+  const submenu7 = document.getElementById('submenu-7');
+  
+  console.log('Botones de 7° encontrados:', {
+    btn71: btn71,
+    btn72: btn72,
+    btn73: btn73,
+    btn74: btn74,
+    btn75: btn75,
+    btn76: btn76,
+    submenu7: submenu7
   });
+  
+  if (btn71 && submenu7 && mainMenu) {
+    btn71.onclick = function() {
+      console.log('Click en btn7-1');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-1').style.display = 'flex';
+    };
+  }
+  
+  if (btn72 && submenu7 && mainMenu) {
+    btn72.onclick = function() {
+      console.log('Click en btn7-2');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-2').style.display = 'flex';
+    };
+  }
+  
+  if (btn73 && submenu7 && mainMenu) {
+    btn73.onclick = function() {
+      console.log('Click en btn7-3');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-3').style.display = 'flex';
+    };
+  }
+  
+  if (btn74 && submenu7 && mainMenu) {
+    btn74.onclick = function() {
+      console.log('Click en btn7-4');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-4').style.display = 'flex';
+    };
+  }
+  
+  if (btn75 && submenu7 && mainMenu) {
+    btn75.onclick = function() {
+      console.log('Click en btn7-5');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-5').style.display = 'flex';
+    };
+  }
+  
+  if (btn76 && submenu7 && mainMenu) {
+    btn76.onclick = function() {
+      console.log('Click en btn7-6');
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      document.getElementById('subjects-7-6').style.display = 'flex';
+    };
+  }
+  
+  // Botones de volver de 7°
+  const back71 = document.getElementById('back-7-1');
+  const back72 = document.getElementById('back-7-2');
+  const back73 = document.getElementById('back-7-3');
+  const back74 = document.getElementById('back-7-4');
+  const back75 = document.getElementById('back-7-5');
+  const back76 = document.getElementById('back-7-6');
+  
+  if (back71 && submenu7) {
+    back71.onclick = function() {
+      document.getElementById('subjects-7-1').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  if (back72 && submenu7) {
+    back72.onclick = function() {
+      document.getElementById('subjects-7-2').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  if (back73 && submenu7) {
+    back73.onclick = function() {
+      document.getElementById('subjects-7-3').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  if (back74 && submenu7) {
+    back74.onclick = function() {
+      document.getElementById('subjects-7-4').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  if (back75 && submenu7) {
+    back75.onclick = function() {
+      document.getElementById('subjects-7-5').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  if (back76 && submenu7) {
+    back76.onclick = function() {
+      document.getElementById('subjects-7-6').style.display = 'none';
+      submenu7.style.display = 'flex';
+    };
+  }
+  
+  console.log('Configuración completada');
+});
 
-  // Mostrar el botón de instalación en todos los dispositivos
-  installBtn.style.display = 'inline-block';
-  // Código de submenu-preceptores eliminado
+// Botón de prueba manual para 7°1°
+document.addEventListener('DOMContentLoaded', function() {
+  const testBtn = document.createElement('button');
+  testBtn.textContent = 'PROBAR 7°1°';
+  testBtn.style.cssText = 'position: fixed; top: 10px; right: 10px; background: red; color: white; padding: 10px; z-index: 9999;';
+  document.body.appendChild(testBtn);
+  
+  testBtn.onclick = function() {
+    const menu71 = document.getElementById('subjects-7-1');
+    const submenu7 = document.getElementById('submenu-7');
+    const mainMenu = document.getElementById('main-menu');
+    
+    console.log('Elementos encontrados:', {
+      menu71: menu71,
+      submenu7: submenu7,
+      mainMenu: mainMenu
+    });
+    
+    if (menu71 && submenu7 && mainMenu) {
+      mainMenu.style.display = 'none';
+      submenu7.style.display = 'none';
+      menu71.style.display = 'flex';
+      console.log('Mostrando menú 7°1°');
+    } else {
+      console.log('No se encontraron los elementos');
+    }
+  };
 });
 </script>
+</body>
 </html>
