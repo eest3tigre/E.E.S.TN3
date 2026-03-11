@@ -905,6 +905,72 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   console.log('Configuración completada');
+  
+  // Código para instalación de PWA
+  let deferredPrompt;
+  const installButton = document.getElementById('btn-install');
+  
+  // Registrar el service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch(error => {
+        console.log('Error al registrar el Service Worker:', error);
+      });
+  }
+  
+  // Escuchar el evento beforeinstallprompt
+  window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('Evento beforeinstallprompt detectado');
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Mostrar el botón de instalación
+    if (installButton) {
+      installButton.style.display = 'block';
+      installButton.textContent = 'INSTALAR APP';
+    }
+  });
+  
+  // Manejar el clic en el botón de instalación
+  if (installButton) {
+    installButton.addEventListener('click', async () => {
+      console.log('Clic en botón de instalación');
+      
+      if (!deferredPrompt) {
+        console.log('No hay prompt de instalación disponible');
+        alert('La instalación no está disponible en este navegador o ya fue instalada.');
+        return;
+      }
+      
+      deferredPrompt.prompt();
+      
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`Resultado de la instalación: ${outcome}`);
+      
+      if (outcome === 'accepted') {
+        console.log('Usuario aceptó la instalación');
+        installButton.style.display = 'none';
+      } else {
+        console.log('Usuario rechazó la instalación');
+      }
+      
+      deferredPrompt = null;
+    });
+    
+    // Ocultar el botón inicialmente
+    installButton.style.display = 'none';
+  }
+  
+  // Detectar si la app ya está instalada
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA instalada exitosamente');
+    if (installButton) {
+      installButton.style.display = 'none';
+    }
+  });
 });
 
 // Botón de prueba manual para 7°1° - Eliminado
